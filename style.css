@@ -2,8 +2,9 @@
     --vermelho-claro:#BF0404;
     --vermelho-medio:#A6121F;
     --vermelho-escuro:#400101;
-    --preto:#0D0D0D;
+    --preto:#121212;
     --branco:#F2F2F2;
+    --btn-gradient:linear-gradient(to bottom, #770000 0%, #AB0303 50%, #770000 100%);
 }
 
 *{
@@ -14,7 +15,7 @@
 }
 
 body{
-    background-color: black;
+    background-color: var(--preto);
 }
 
 /*HEADER*/
@@ -23,19 +24,20 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 40px;
+    padding: 0px 120px;
     height: 100px;
     width: 100%;
 }
 
 header img{
-    width: 100px;
+    width: 70px;
 }
 
 nav ul{
     display: flex;
     list-style-type: none;
-    gap: 30px;
+    gap: 40px;
+    align-items: center;
 }
 
 nav a{
@@ -43,16 +45,20 @@ nav a{
     flex-direction: column;
     text-decoration: none;
     color:var(--branco) ;
-    text-shadow: 0px 0px 15px var(--vermelho-claro);
+    font-family: 'Lalezar', sans-serif;
 }
 
 .btn{
-    padding: 5px 30px;
-    background-color: var(--vermelho-claro);
+    font-family: 'Lalezar', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    padding: 0px 10px;
+    background-image: var(--btn-gradient);
     color: var(--branco);
-    border-radius: 5px;
+    border-radius: 10px;
     border: none;
-    font-size: 1.2rem;
+    width: 170px;
+    height: 30px;
 }
 
 /*CONTENT*/

@@ -1,64 +1,94 @@
-:root{
-    --vermelho-claro:#BF0404;
-    --vermelho-medio:#A6121F;
-    --vermelho-escuro:#400101;
-    --preto:#121212;
-    --branco:#F2F2F2;
-    --btn-gradient:linear-gradient(to bottom, #770000 0%, #AB0303 50%, #770000 100%);
-}
-
 *{
-    padding: 0px;
     margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-    background-color: var(--preto);
-}
+:root{
+    --title-font:400 48px 'lalezar', sans-serif;
+    --title-color:white;
 
-/*HEADER*/
+    --subtitle-font: 300 32px'Lalezar', sans-serif;
+    --subtitle-color:#AB0303;
+
+    --text-font: 100 20px "League Spartan", sans-serif;
+    --text-color:white;
+}
 
 header{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    height: 77px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 120px;
-    height: 100px;
-    width: 100%;
+
+    padding:20px;
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(3px);      
+    -webkit-backdrop-filter: blur(19px);
 }
 
-header img{
-    width: 70px;
+#logo-ct{
+    width: 60px;
+    height: 60px;
 }
 
-nav ul{
-    display: flex;
-    list-style-type: none;
-    gap: 40px;
-    align-items: center;
+.material-symbols-outlined{
+    color: white;
+    font-size: 48px;
 }
 
-nav a{
+/*Main Content*/
+#home-section{
     display: flex;
     flex-direction: column;
-    text-decoration: none;
-    color:var(--branco) ;
-    font-family: 'Lalezar', sans-serif;
+    justify-content: end;
+    gap: 40px;
+
+    background-image: url(images/Outras/bg-3.jpg);
+    background-size: cover;
+    background-position: center center;
+
+    padding: 0px 10px;
+}
+
+#left-home{
+    width: 100%;
+    text-align: center;
+    margin-top: 130px;
+}
+
+#left-home h1{
+    font: var(--title-font);
+    color: var(--title-color);
+}
+
+#left-home p{
+    font:var(--text-font);
+    color: var(--text-color);
+    margin-bottom: 30px;
 }
 
 .btn{
-    font-family: 'Lalezar', sans-serif;
-    font-weight: 400;
-    font-size: 1em;
+    font-family: 'lalezar', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: white;
+
+    height: 35px;
     padding: 0px 10px;
-    background-image: var(--btn-gradient);
-    color: var(--branco);
-    border-radius: 10px;
+
     border: none;
-    width: 170px;
-    height: 30px;
+    border-radius: 10px;
+    background-image: linear-gradient(#770000 0%, #AB0303 50%, #770000 100%);
 }
 
-/*CONTENT*/
+#rigth-home img{
+    width: 100%;
+}

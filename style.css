@@ -5,13 +5,14 @@
 }
 
 :root{
-    --title-font:400 48px 'lalezar', sans-serif;
+    --title-font-family:'lalezar', sans-serif;
+    --title-font-size:38px;
     --title-color:white;
 
-    --subtitle-font: 300 32px'Lalezar', sans-serif;
+    --subtitle-font: 300 28px'Lalezar', sans-serif;
     --subtitle-color:#AB0303;
 
-    --text-font: 200 20px "League Spartan", sans-serif;
+    --text-font: 200 16px "League Spartan", sans-serif;
     --text-color1:white;
     --text-color2:black;
 }
@@ -66,14 +67,20 @@ header{
 }
 
 #left-home h1{
-    font: var(--title-font);
+    font-family: var(--title-font-family);
+    font-size: var(--title-font-size);
+    font-weight: 400;
     color: var(--title-color);
+    white-space: wrap;
+    line-height: 80%;
+    letter-spacing:1px;
 }
 
 #left-home p{
     font:var(--text-font);
     color: var(--text-color1);
     margin-bottom: 30px;
+    margin-top: 10px;
 }
 
 .btn{

@@ -157,3 +157,32 @@ h2{
     flex: 0.2;
     
 }
+
+#left-desconto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    height: 400px;
+
+    background-image: url(images/Outras/Projeto-Lutar-para-vencer_morro-do-Horácio_Anderson-Coelho_7203-800x533.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-color: rgba(0, 0, 0, 0.551); 
+    background-blend-mode: overlay; 
+
+}
+
+#left-desconto p{
+    font-family: 'League spartan', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    color: var(--text-color1);
+}
+#txt-promo{
+    font-family: 'Bangers', sans-serif;
+    font-weight: 400;
+    font-size: 96px;
+}

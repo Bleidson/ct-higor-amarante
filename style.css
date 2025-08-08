@@ -185,4 +185,8 @@ h2{
     font-family: 'Bangers', sans-serif;
     font-weight: 400;
     font-size: 96px;
+    width: 100%;
+    background-image: linear-gradient(#ffff, #999);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

@@ -190,3 +190,35 @@ h2{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+#professores-section{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 30px 0px;
+}
+
+#professores-section p{
+    font:var(--text-font);
+    color: var(--text-color2);
+    margin-bottom: 30px;
+
+}
+
+#carrousel{
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 20px;
+}
+
+.prof-card{
+    
+}
+
+.prof-card-description{
+
+}
+
+.prof-card img{
+
+}

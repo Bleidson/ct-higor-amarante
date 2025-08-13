@@ -142,6 +142,7 @@ h2{
 .card img{
     flex: 0.8;
     width: 150px;
+    object-fit: cover;
 }
 
 .card span{
@@ -192,6 +193,7 @@ h2{
 }
 
 #professores-section{
+    position: relative;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -207,18 +209,125 @@ h2{
 
 #carrousel{
     display: flex;
-    flex-wrap: nowrap;
-    column-gap: 20px;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+#carrousel::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+#carrousel button{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.425);
+    backdrop-filter:blur(2px);
+    border: 2px solid white;
+    border-radius: 100%;
+    font-size: 28px;
+    color: #770000;
+
+}
+
+#carrousel button:hover{
+    background-color: red;
+}
+
+.prev{
+    top: 50%;
+    left: 10px;
+}
+
+.next{
+    top: 50%;
+    right: 10px;
 }
 
 .prof-card{
-    
-}
-
-.prof-card-description{
-
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(128, 128, 128, 0.416);
+    width: 175px;
+    height: 300px;
+    border-radius: 10px;
 }
 
 .prof-card img{
+    background-color: red;
+    border-radius: 10px 10px 0px 0px; 
+    height: 80%;
+    width: auto;
+    object-fit: cover;
+}
 
+.prof-card-description{
+    background-image: linear-gradient(#770000 0%, #AB0303 50%, #770000 100%);
+    border-radius: 0px 0px 10px 10px;
+    height: 20%;
+    padding: 5px;
+}
+
+#carrousel p{
+    font: var(--text-font);
+    color: white;
+    margin: 0px;
+    
+}
+
+.prof-card-description h3{
+    font: 300 20px 'lalezar', sans-serif;
+    color: white;
+}
+
+#motivacional-section{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 10px;
+    background-color: #121212;
+}
+
+#img-motivacional{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    
+    border: 2px solid transparent;
+    border-radius: 10px;
+    border-image: conic-gradient(
+        #FD0909 0%,
+        #010000 25%,
+        #B11212 50%,
+        #010000 75%,
+        #FD0909 100%
+    ) 1;
+    border-image-slice: 1;
+    z-index: 999;
+}
+
+#vetor-motivacional{
+    position: absolute;
+    z-index: 1;
+    top: -100px;
+}
+
+#motivacional-section p{
+    color: white;
+    font: var(--text-font);
+    line-height: 100%;
+    z-index: 999;
+}
+
+#motivacional-section h2{
+    text-align: center;
+    margin: 30px 0px 30px 0px;
+    padding: 0px 70px;
+    line-height: 80%;
+    font-size: 36px;
+    z-index: 999;
 }

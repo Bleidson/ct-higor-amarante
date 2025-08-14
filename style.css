@@ -331,3 +331,154 @@ h2{
     font-size: 36px;
     z-index: 999;
 }
+
+
+
+#parceiros-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 10px;
+}
+
+#parceiros{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; 
+}
+.parceiro {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.parceiro h3{
+    font-family: 'lalezar', sans-serif;
+    font-size: 24px;
+}
+
+.parceiro p{
+    font: 200 18px 'League Spartan';
+}
+
+.parceiro img {
+    width: 60px;
+    height: 60px;
+}
+
+.parceiro:nth-child(even) {
+    flex-direction: row-reverse; /* Inverte lado da imagem e texto */
+    text-align: right; /* Alinha o texto à direita */
+}
+
+#contato-section {
+  padding: 30px 10px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+#contato-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--subtitle-color);
+}
+
+.contato-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.contato-form label {
+  font-weight: 100;
+  font-family: 'lalezar', sans-serif;
+  font-size: 20px;
+  color: var(--subtitle-color);
+}
+
+.contato-form input,
+.contato-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+
+.contato-info {
+  margin-top: 30px;
+  text-align: center;
+  font-family: 'league spartan', sans-serif;
+}
+
+.redes-sociais {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.redes-sociais a {
+  color: #b30000;
+  text-decoration: none;
+  font-family: 'league spartan', sans-serif;
+}
+
+.redes-sociais a:hover {
+  text-decoration: underline;
+}
+
+
+#site-footer {
+    display: flex;
+    gap: 10px;
+  background: #121212;
+  color: #fff;
+  padding: 30px 10px;
+  text-align: center;
+  font: var(--text-font);
+}
+
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-nav a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-social a {
+  color: #b30000;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  text-decoration: underline;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: #888;
+}

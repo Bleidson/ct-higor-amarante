@@ -202,6 +202,10 @@ h2{
     -webkit-text-fill-color: transparent;
 }
 
+#rigth-desconto{
+    display: none;
+}
+
 #professores-section{
     position: relative;
     display: flex;
@@ -294,6 +298,10 @@ h2{
 }
 
 #motivacional-section{
+    background-color: #121212;
+}
+
+#motivacional-content{
     position: relative;
     display: flex;
     align-items: center;
@@ -326,14 +334,14 @@ h2{
     top: -100px;
 }
 
-#motivacional-section p{
+#motivacional-content p{
     color: white;
     font: var(--text-font);
     line-height: 100%;
     z-index: 999;
 }
 
-#motivacional-section h2{
+#motivacional-content h2{
     text-align: center;
     margin: 30px 0px 30px 0px;
     padding: 0px 70px;
@@ -356,6 +364,7 @@ h2{
     display: flex;
     flex-direction: column;
     gap: 2rem; 
+    width: 100%;
 }
 .parceiro {
     display: flex;
@@ -443,11 +452,14 @@ h2{
   text-decoration: underline;
 }
 
+#site-footer{
+    background-color: #010000;
+    width: 100%;
+}
 
-#site-footer {
+#footer-content {
     display: flex;
     gap: 10px;
-  background: #121212;
   color: #fff;
   padding: 30px 10px;
   text-align: center;
@@ -564,9 +576,10 @@ nav{
         font: 200 32px 'Lalezar', sans-serif;        
     }
 
-    #motivacional-section{
+    #motivacional-content{
         flex-direction: row;
         gap:30px;
+        overflow:cover;
     }
 
     #img-motivacional{
@@ -583,22 +596,26 @@ nav{
 
     #vetor-motivacional{
         top: -40px;
-        left: -40px;
+        left: 60px;
     }
 
-    #site-footer{
+    
+
+    #footer-content{
         justify-content: space-between;
     }
 }
 
 /* Tablets grandes e notebooks pequenos */
 @media (min-width: 1024px) {
-    
+    .btn{
+        background-color: blue;
+    }
+
     header{
         max-width: 1200px;
         margin: auto;
     }
-    
 
     #home-section{
         display: flex;
@@ -645,6 +662,120 @@ nav{
     #left-home p{
         font-size: 20px;
         text-align: start;
+    }
+
+    #modalidades-section p{
+        font-size: 20px;
+    }
+
+    #desconto-section{
+        background-color: #121212;
+    }
+
+    #desconto-content{
+        display: flex;
+        background-color: #121212;
+        height: 400px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    #left-desconto{
+        flex: 0.4;
+        background-image: none;
+        background-color: #121212;
+        align-items: start;
+        padding-left: 30px;
+        
+    }
+
+    #txt-promo{
+        text-align: start;
+    }
+
+    #left-desconto p{
+        text-align: start;
+    }
+
+    #rigth-desconto{
+        display: flex;
+        flex: 0.6;
+        clip-path: polygon(25% 0, 100% 0, 100% 100%, 10% 100%);
+    }
+
+    #rigth-desconto img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    #professores-section{
+        align-items: center;
+        max-width: 1220px;
+        margin: auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    #professores-section p{
+        font-size: 20px;
+    }
+
+    .prof-card{
+        width: 250px;
+        height: 450px;
+    }
+    .prof-card img{
+        flex: 0.9;
+    }
+    .prof-card-description{
+        display: flex;
+        flex-direction: column;
+        flex: 0.1;
+        align-items: center;
+    }
+
+    .prof-card-description h3{
+        font-size: 28px;
+        line-height: 20px;
+    }
+
+    .prof-card-description p{
+        width: 100%;
+    }
+
+    #motivacional-section{
+        
+    }
+
+    #motivacional-content{
+        position: relative;
+        padding: 30px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    #motivacional-section img{
+        height:560px;
+        width: 465px;
+    }
+
+    #motivacional-section p{
+        font-size: 20px;
+    }
+
+    #parceiros{
+        max-width: 1200px;
+    }
+
+    .contato-form{
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    #footer-content{
+        max-width: 1200px;
+        margin: auto;
     }
 }
 

@@ -38,6 +38,42 @@ header{
 }
 
 
+
+nav{
+    display: none;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+nav a {
+  position: relative; 
+  text-decoration: none;
+  font: 200 20px 'League Spartan', sans-serif;
+  color: var(--text-color1);
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; 
+  width: 0%;
+  height: 2px;
+  background-color: #770000;
+  transition: width 0.3s ease; 
+}
+
+nav a:hover {
+  color: #770000;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+
+
 #logo-ct{
     width: 60px;
     height: 60px;
@@ -51,10 +87,11 @@ header{
 /*Main Content*/
 
 #home-section{
+    background-color: #de0000f9;      
     background-image: url(images/Outras/bg-3.jpg);
     background-size: cover;
     background-position: center center;
-          
+    
 }
 #home-content{
     display: flex;
@@ -68,6 +105,8 @@ header{
 }
 
 #left-home{
+    display: flex;
+    gap: 20px;
     width: 100%;
     text-align: center;
     margin-top: 130px;
@@ -86,23 +125,73 @@ header{
 #left-home p{
     font:var(--text-font);
     color: var(--text-color1);
-    margin-bottom: 30px;
-    margin-top: 10px;
+    
 }
 
-.btn{
-    font-family: 'lalezar', sans-serif;
-    font-size: 24px;
-    font-weight: 300;
-    color: white;
 
-    height: 35px;
-    padding: 0px 10px;
 
-    border: none;
-    border-radius: 10px;
-    background-image: linear-gradient(#770000 0%, #AB0303 50%, #770000 100%);
+.alunos-info {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* espaço entre avatares e texto */
+  font-family: 'League Spartan', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-color1);
 }
+
+.avatars {
+  display: flex;
+}
+
+.avatars img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-left: -10px;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.avatars img:first-child {
+  margin-left: 0;
+}
+
+.avatars img:hover {
+  transform: scale(1.1);
+  z-index: 2; /* sobe o avatar */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+
+
+.btn {
+  font-family: 'lalezar', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: white;
+  padding: 0px 20px;
+
+  height: 40px;
+
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  background-image: linear-gradient(#770000 0%, #AB0303 50%, #770000 100%);
+  background-size: 200% auto; /* para animar o gradiente */
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-position: right center; /* move o gradiente */
+  transform: translateY(-3px) scale(1.03); /* efeito "levantar" */
+  box-shadow: 0 5px 15px rgba(119, 0, 0, 0.5);
+}
+
 
 #rigth-home img{
     width: 100%;
@@ -516,20 +605,9 @@ nav{
     .menu-toggle{
         display: none;
     }
+    
     nav{
         display: flex;
-        gap: 30px;
-        align-items: center;
-    }
-
-    nav a{
-        text-decoration: none;
-        font: 200 20px 'League Spartan', sans-serif;
-        color: var(--text-color1);
-    }
-
-    nav a:hover{
-        color: #770000;
     }
 
     #home-content{
@@ -544,11 +622,7 @@ nav{
         font: 200 28px 'League Spartan', sans-serif;
     }
 
-    #left-home button{
-        width: 50%;
-        height: 50px;
-        font: 200 32px 'Lalezar', sans-serif;
-    }
+
 
     h2{
         font: 400 40px 'Lalezar';
@@ -570,11 +644,7 @@ nav{
         font: var(--text-fontGrande);
     }
 
-    #desconto-section button{
-        width: 50%;
-        height: 50px;
-        font: 200 32px 'Lalezar', sans-serif;        
-    }
+
 
     #motivacional-content{
         flex-direction: row;
@@ -613,8 +683,12 @@ nav{
     }
 
     header{
-        max-width: 1200px;
+        max-width: 1400px;
         margin: auto;
+    }
+
+    nav a{
+        font-size: 16px;
     }
 
     #home-section{
@@ -623,7 +697,7 @@ nav{
         align-items: end;
     }
     #home-content{
-        max-width: 1200px;
+        max-width: 1400px;
         margin: auto;
         margin-top: 100px;
         margin-bottom: 0px;
@@ -651,21 +725,22 @@ nav{
         flex-direction: column;
         align-items: start;
         justify-content: center;
-        height: 750px
+        height: 750px;
     }
     #left-home h1{
         text-align: start;
         width: 100%;
         font-size: 48px;
+        line-height: 100%;
     }
 
     #left-home p{
-        font-size: 20px;
+        font-size: 16px;
         text-align: start;
     }
 
     #modalidades-section p{
-        font-size: 20px;
+        font-size: 16px;
     }
 
     #desconto-section{
@@ -676,7 +751,7 @@ nav{
         display: flex;
         background-color: #121212;
         height: 400px;
-        max-width: 1200px;
+        max-width: 1400px;
         margin: auto;
     }
 
@@ -695,6 +770,7 @@ nav{
 
     #left-desconto p{
         text-align: start;
+        font-size: 16px;
     }
 
     #rigth-desconto{
@@ -711,14 +787,14 @@ nav{
     
     #professores-section{
         align-items: center;
-        max-width: 1220px;
+        max-width: 1400px;
         margin: auto;
         margin-top: 40px;
         margin-bottom: 40px;
     }
 
     #professores-section p{
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .prof-card{
@@ -736,6 +812,7 @@ nav{
     }
 
     .prof-card-description h3{
+        margin-top: 10px;
         font-size: 28px;
         line-height: 20px;
     }
@@ -744,14 +821,10 @@ nav{
         width: 100%;
     }
 
-    #motivacional-section{
-        
-    }
-
     #motivacional-content{
         position: relative;
         padding: 30px;
-        max-width: 1200px;
+        max-width: 1400px;
         margin: auto;
     }
 
@@ -761,21 +834,27 @@ nav{
     }
 
     #motivacional-section p{
-        font-size: 20px;
+        font-size: 16px;
     }
 
     #parceiros{
-        max-width: 1200px;
+        max-width: 1400px;
+    }
+
+    #parceiros p{
+        font-size: 16px;
     }
 
     .contato-form{
-        max-width: 1200px;
+        max-width: 1400px;
         margin: auto;
     }
 
     #footer-content{
-        max-width: 1200px;
+        max-width: 1400px;
         margin: auto;
+        justify-content: center;
+        gap:50px;
     }
 }
 

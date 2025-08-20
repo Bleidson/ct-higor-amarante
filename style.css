@@ -37,6 +37,7 @@ header{
     -webkit-backdrop-filter: blur(19px);
 }
 
+
 #logo-ct{
     width: 60px;
     height: 60px;
@@ -48,15 +49,20 @@ header{
 }
 
 /*Main Content*/
+
 #home-section{
+    background-image: url(images/Outras/bg-3.jpg);
+    background-size: cover;
+    background-position: center center;
+          
+}
+#home-content{
     display: flex;
     flex-direction: column;
     justify-content: end;
     gap: 40px;
 
-    background-image: url(images/Outras/bg-3.jpg);
-    background-size: cover;
-    background-position: center center;
+
 
     padding: 0px 10px;
 }
@@ -131,6 +137,7 @@ h2{
     column-gap: 20px;
     justify-content: center;
     max-width: 800px;
+    min-width: 321px;
 }
 
 .card{
@@ -513,7 +520,7 @@ nav{
         color: #770000;
     }
 
-    #home-section{
+    #home-content{
         padding: 0px 40px;
     }
 
@@ -556,11 +563,89 @@ nav{
         height: 50px;
         font: 200 32px 'Lalezar', sans-serif;        
     }
+
+    #motivacional-section{
+        flex-direction: row;
+        gap:30px;
+    }
+
+    #img-motivacional{
+        flex: 0.5;
+    }
+
+    #motivacional-description{
+        flex: 0.5;
+    }
+
+    #motivacional-description h2{
+        padding: 0px;
+    }
+
+    #vetor-motivacional{
+        top: -40px;
+        left: -40px;
+    }
+
+    #site-footer{
+        justify-content: space-between;
+    }
 }
 
 /* Tablets grandes e notebooks pequenos */
 @media (min-width: 1024px) {
-  /* Layout em 3 colunas, imagens grandes, espaçamentos mais amplos */
+    
+    header{
+        max-width: 1200px;
+        margin: auto;
+    }
+    
+
+    #home-section{
+        display: flex;
+        height: 750px;
+        align-items: end;
+    }
+    #home-content{
+        max-width: 1200px;
+        margin: auto;
+        margin-top: 100px;
+        margin-bottom: 0px;
+        padding: 0px 20px;
+        flex-direction: row;
+        align-items: end;
+        gap: 0px;
+    }
+
+    #rigth-home img{
+        height: max-content;       
+    }
+
+    #rigth-home{
+        display: flex;
+        flex: 0.6;
+        height: 750px;
+        align-items: end;
+    }
+
+    #left-home{
+        flex: 0.4;
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        height: 750px
+    }
+    #left-home h1{
+        text-align: start;
+        width: 100%;
+        font-size: 48px;
+    }
+
+    #left-home p{
+        font-size: 20px;
+        text-align: start;
+    }
 }
 
 /* Desktops grandes */

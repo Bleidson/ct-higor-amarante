@@ -448,59 +448,72 @@ h2{
     margin: 0 0 5px;
 }
 
-#motivacional-section{
-    background-color: #121212;
+#motivacional-section {
+  background-color: #121212;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-#motivacional-content{
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 30px 10px;
-    background-color: #121212;
+#motivacional-content {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
-#img-motivacional{
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    
-    border: 2px solid transparent;
-    border-radius: 10px;
-    border-image: conic-gradient(
-        #FD0909 0%,
-        #010000 25%,
-        #B11212 50%,
-        #010000 75%,
-        #FD0909 100%
-    ) 1;
-    border-image-slice: 1;
-    z-index: 999;
+#img-motivacional {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 5px 20px rgba(230, 224, 224, 0.6);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-#vetor-motivacional{
-    position: absolute;
-    z-index: 1;
-    top: -100px;
+#img-motivacional:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 20px rgba(230, 224, 224, 0.6);
 }
 
-#motivacional-content p{
-    color: white;
-    font: var(--text-font);
-    line-height: 100%;
-    z-index: 999;
+#motivacional-content h2 {
+  font-size: 42px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #fd0909, #b11212);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 3s infinite alternate;
 }
 
-#motivacional-content h2{
-    text-align: center;
-    margin: 30px 0px 30px 0px;
-    padding: 0px 70px;
-    line-height: 80%;
-    font-size: 36px;
-    z-index: 999;
+@keyframes glow {
+  from { text-shadow: 0 0 10px rgba(253, 9, 9, 0.4); }
+  to   { text-shadow: 0 0 25px rgba(177, 18, 18, 0.8); }
 }
 
+#motivacional-content p {
+  color: #ddd;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#vetor-motivacional {
+  position: absolute;
+  top: -50px;
+  left: -100px;
+  width: 300px;
+  opacity: 0.15;
+  z-index: 1;
+}
 
 
 #parceiros-section {

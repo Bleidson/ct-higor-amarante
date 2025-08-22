@@ -142,6 +142,7 @@ function carregarTurmasFiltradas() {
         (t.genero === dadosForm.genero || t.genero === 'misto')
     );
 
+
     turmasFiltradas.forEach(t => {
         const card = document.createElement('div');
         card.className = 'turma-card';

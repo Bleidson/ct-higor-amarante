@@ -804,7 +804,7 @@ nav{
 
 /* cards de turmas */
 /* cards */
-.turma-card {
+#etapa2.turma-card {
     background-color: #f9f9f9;
     border-radius: 12px;
     padding: 20px;
@@ -816,23 +816,23 @@ nav{
     border: 2px solid transparent;
 }
 
-.turma-card:hover {
+#etapa2.turma-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
-.turma-card.selecionado {
+#etapa2.turma-card.selecionado {
     border: 2px solid #4CAF50; /* borda verde quando selecionado */
     background-color: #e6f9ea;
 }
 
-.turma-card strong {
+#etapa2.turma-card strong {
     display: block;
     font-size: 18px;
     margin-bottom: 5px;
 }
 
-.turma-card span {
+#etapa2.turma-card span {
     display: block;
     font-size: 14px;
     color: #555;
@@ -911,11 +911,7 @@ nav{
   cursor: pointer;
 }
 
-#etapa3 .btnModal:hover{
-    background-position: right center; /* move o gradiente */
-    transform: translateY(-3px) scale(1.03); /* efeito "levantar" */
-    box-shadow: 0 5px 15px rgba(119, 0, 0, 0.5);
-}
+
 
 
 /* animações do modal */

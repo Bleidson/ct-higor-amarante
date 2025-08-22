@@ -227,6 +227,68 @@
         </footer>
             
     </main>
+
+<div id="modalMatricula" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+    <div id="modalAlert" class="modal-alert" style="display:none;"></div>
+    <form id="matriculaForm">
+        <!-- Etapa 1: Dados Pessoais -->
+        <div class="etapa" id="etapa1">
+            <label>Nome completo</label>
+            <input type="text" id="nomeMatricula" required>
+
+            <label>Telefone/WhatsApp</label>
+            <input type="text" id="telefoneMatricula" required>
+
+            <label>Modalidade desejada</label>
+            <select id="modalidadeMatricula" required>
+            <option value="">Selecione</option>
+            <option value="jiujitsu">Jiu-Jitsu</option>
+            <option value="muaythai">Muay Thai</option>
+            <!-- outras modalidades -->
+            </select>
+
+            <label>Idade</label>
+            <input type="number" id="idadeMatricula" required>
+
+            <label>Gênero</label>
+            <select id="generoMatricula" required>
+            <option value="">Selecione</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="misto">Misto</option>
+            </select>
+
+            <button class="btn" type="button" onclick="proximaEtapa()">Avançar</button>
+        </div>
+
+        <!-- Etapa 2: Escolha de Turmas -->
+        <div class="etapa" id="etapa2" style="display:none;">
+            <h2>Turmas Disponiveis</h2>
+            <div id="cardsTurmas"></div>
+            
+            <div class="btn-nav">
+                <button class="btnModal" type="button" onclick="voltarEtapa1()">Voltar</button>
+                <button class="btnModal" type="button" onclick="if(capturarTurmasSelecionadas()){proximaEtapa();}">Concluir</button>
+            </div>
+        </div>
+
+        <!-- Etapa 3: Confirmação -->
+        <div class="etapa" id="etapa3" style="display:none;">
+            <h2>Informacoes da Matricula</h2>
+            <div id="resumo"></div>
+            <div class="btn-nav">
+                <button class="btnModal" type="button" onclick="voltarEtapa2()">Voltar</button>
+                <button class="btnModal" type="submit">Enviar matrícula</button>
+            </div>
+        </div>
+    </form>
+  </div>
+</div>
+
+
     <script src="script.js"></script>
 </body>
 </html>

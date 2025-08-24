@@ -268,15 +268,10 @@ document.getElementById('matriculaForm').addEventListener('submit', (e)=>{
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(dados)
         })
-        .then(res => res.json())
+        .then(res => res.text()) // ler como texto
         .then(resp => {
-            if(resp.success){
             alert("Matrícula enviada com sucesso! Aguarde contato.");
-            console.log(resp.response);
-            } else {
-            alert("Erro ao enviar matrícula.");
-            console.error(resp.error);
-            }
+            console.log(resp);
         })
         .catch(err => {
             alert("Erro ao enviar matrícula. Tente novamente.");

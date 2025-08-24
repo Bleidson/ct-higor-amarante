@@ -15,10 +15,10 @@ export default async function handler(req, res) {
       headers: { "Content-Type": "application/json" }
     });
 
-    const text = await response.text(); // Apps Script geralmente retorna texto simples
-    res.status(200).json({ success: true, response: text });
+    const text = await response.text(); // NÃO usar .json()
+    res.status(200).send(text); // envia o texto diretamente
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: "Erro ao enviar matrícula" });
+    res.status(500).send("Erro ao enviar matrícula para o Google Script");
   }
 }

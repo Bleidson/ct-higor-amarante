@@ -260,24 +260,30 @@ document.getElementById('matriculaForm').addEventListener('submit', (e)=>{
     console.log("Dados enviados:", dadosForm);
 
 
-    const scriptURL = "https://script.google.com/macros/s/AKfycbynkWWC0P41ye9TWVSGTdZ_RfldqeY1oiwdvYaKdT079SFwxR5luFBc7RpSNk53c41E3w/exec";
 
-    function enviarMatricula(dados) {   
-    fetch(scriptURL, {
-        method: "POST",
-        body: JSON.stringify(dados),
-        headers: { "Content-Type": "application/json" }
-    })
+
+    function enviarMatricula(dados) {
+        fetch("/api/matricula", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(dados)
+        })
         .then(res => res.json())
         .then(resp => {
-        alert("Matrícula enviada com sucesso! Aguarde contato.");
-        console.log(resp);
+            if(resp.success){
+            alert("Matrícula enviada com sucesso! Aguarde contato.");
+            console.log(resp.response);
+            } else {
+            alert("Erro ao enviar matrícula.");
+            console.error(resp.error);
+            }
         })
         .catch(err => {
-        alert("Erro ao enviar matrícula. Tente novamente.");
-        console.error(err);
+            alert("Erro ao enviar matrícula. Tente novamente.");
+            console.error(err);
         });
     }
+    
 
     // Exemplo de uso no final do form
     const dadosMatricula = {

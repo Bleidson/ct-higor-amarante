@@ -15,11 +15,11 @@
     <header>
         <img src="images/Outras/logo-ct.png" alt="Ct HIGOR AMARANTE" id="logo-ct">
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Modalidades</a>
-            <a href="#">Professores</a>
-            <a href="#">Parceiros</a>
-            <button class="btn">Matricule-se</button>
+            <a href="#home-section">Home</a>
+            <a href="#modalidades-section">Modalidades</a>
+            <a href="#professores-section">Professores</a>
+            <a href="#parceiros-section">Parceiros</a>
+            <button class="btn btnMatricula">Matricule-se</button>
         </nav>
         <div class="menu-toggle">
             <span class="material-symbols-outlined">
@@ -41,7 +41,7 @@
                         </div>
                         <span class="alunos-text">+ 100 alunos matriculados</span>
                     </div>
-                    <button class="btn">Matricule-se</button>
+                    <button class="btn btnFuncional" >Agendar Experimental</button>
                 </div>
                 <div id="rigth-home">
                     <img src="images/Outras/home-img.png" alt="Higor Amarente">
@@ -52,27 +52,27 @@
             <h2>Modalidades</h2>
             <p>Qual vai ser sua arte? Escolha e comece a <br> trilhar sua jornada.</p>
             <div id="cards-modalidades">
-                <div class="card">
+                <div class="card" data-modalidade="jiujitsu">
                     <img src="images/Modalidades/GABRIEL_VELLA_vs_ROMINHO_51.jpg" alt="">
                     <span>Jiu-Jitsu</span>
                 </div>
-                <div class="card">
+                <div class="card" data-modalidade="muaythai">
                     <img src="images/Modalidades/ash-1629.webp" alt="">
                     <span>Muay-Thai</span>
                 </div>
-                <div class="card">
+                <div class="card" data-modalidade="karate">
                     <img src="images/Modalidades/karate-tayokan.jpg" alt="">
                     <span>Karate</span>
                 </div>
-                <div class="card">
+                <div class="card" data-modalidade="Ballet">
                     <img src="images/Modalidades/5b7351e221ff9-active-adult-artist-358010.jpg" alt="">
                     <span>Ballet</span>
                 </div>
-                <div class="card">
+                <div class="card" data-modalidade="treinofuncional">
                     <img src="images/Modalidades/Dicas-para-treino-funcional-o-que-nao-pode-faltar-2.jpg" alt="">
                     <span>Treino Funcional</span>
                 </div>
-                <div class="card">
+                <div class="card" data-modalidade="ginastica">
                     <img src="images/Modalidades/images.jfif" alt="">
                     <span>Ginastica</span>
                 </div>
@@ -87,7 +87,7 @@
                     <span id="txt-promo">
                         25%
                     </span>
-                    <button class="btn">Matricule-se</button>
+                    <button class="btn btnMatricula">Matricule-se</button>
                 </div>
                 <div id="rigth-desconto">
                     <img src="images/Outras/Projeto-Lutar-para-vencer_morro-do-Horácio_Anderson-Coelho_7203-800x533.jpg" alt="">
@@ -236,6 +236,7 @@
     <form id="matriculaForm">
         <!-- Etapa 1: Dados Pessoais -->
         <div class="etapa" id="etapa1">
+            <h2>Matricula</h2>
             <label>Nome completo</label>
             <input type="text" id="nomeMatricula" required>
 
@@ -246,7 +247,11 @@
             <select id="modalidadeMatricula" required>
             <option value="">Selecione</option>
             <option value="jiujitsu">Jiu-Jitsu</option>
-            <option value="muaythai">Muay Thai</option>
+            <option value="muaythai">Muay-Thai</option>
+            <option value="karate">Karate</option>
+            <option value="ballet">Ballet</option>
+            <option value="treinofuncional">Treino Funcional</option>
+            <option value="ginastica">Ginastica</option>
             <!-- outras modalidades -->
             </select>
 
@@ -258,7 +263,6 @@
             <option value="">Selecione</option>
             <option value="masculino">Masculino</option>
             <option value="feminino">Feminino</option>
-            <option value="misto">Misto</option>
             </select>
 
             <button class="btn" type="button" onclick="proximaEtapa()">Avançar</button>

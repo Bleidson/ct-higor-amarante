@@ -34,7 +34,7 @@ setInterval(scrollNext, 10000); // auto-play a cada 10 segundos
 // FORMULÁRIO MULTI-ETAPAS
 // ==========================
 const modal = document.getElementById('modalMatricula');
-const btnsAbrir = document.querySelectorAll('.btn'); // todos os botões matricule-se
+const btnsAbrir = document.querySelectorAll('.btnMatricula'); // todos os botões matricule-se
 const btnFechar = document.querySelector('.modal .close');
 
 // abrir modal
@@ -127,9 +127,7 @@ function voltarEtapa2() {
 // ==========================
 // Filtragem e exibição de turmas
 // ==========================
-// ==========================
-// ETAPA 2 – CARDS CLICÁVEIS
-// ==========================
+
 function carregarTurmasFiltradas() {
     const cardsContainer = document.getElementById('cardsTurmas');
     cardsContainer.innerHTML = '';
@@ -228,11 +226,73 @@ function montarResumo() {
 // ==========================
 // Envio do formulário
 // ==========================
+
+// Pega todos os cards de modalidades
+const modalidadeCards = document.querySelectorAll(".card");
+
+// Campo select do formulário
+const selectModalidade = document.getElementById("modalidadeMatricula");
+
+// Função para abrir modal (ajuste para o seu código atual)
+function abrirModal() {
+  document.getElementById("modalMatricula").style.display = "flex";
+}
+
+modalidadeCards.forEach(card => {
+  card.addEventListener("click", () => {
+    const modalidade = card.getAttribute("data-modalidade");
+
+    // Define o valor no select do formulário
+    selectModalidade.value = modalidade;
+
+    // Abre o modal
+    abrirModal();
+  });
+});
+
+
+// ==========================
+// Envio do formulário
+// ==========================
 document.getElementById('matriculaForm').addEventListener('submit', (e)=>{
     e.preventDefault();
     alert("Sua matrícula está em análise. Entraremos em contato em breve!");
     console.log("Dados enviados:", dadosForm);
-    // Aqui você pode integrar Google Sheets/Airtable
+
+
+    const scriptURL = "https://script.google.com/macros/s/AKfycbynkWWC0P41ye9TWVSGTdZ_RfldqeY1oiwdvYaKdT079SFwxR5luFBc7RpSNk53c41E3w/exec";
+
+    function enviarMatricula(dados) {   
+    fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(dados),
+        headers: { "Content-Type": "application/json" }
+    })
+        .then(res => res.json())
+        .then(resp => {
+        alert("Matrícula enviada com sucesso! Aguarde contato.");
+        console.log(resp);
+        })
+        .catch(err => {
+        alert("Erro ao enviar matrícula. Tente novamente.");
+        console.error(err);
+        });
+    }
+
+    // Exemplo de uso no final do form
+    const dadosMatricula = {
+    nome: document.getElementById("nome").value,
+    telefone: document.getElementById("telefoneMatricula").value,
+    modalidade: document.getElementById("modalidadeMatricula").value,
+    idade: document.getElementById("idadeMatricula").value,
+    genero:document.getElementById("generoMatricula").value,
+    turma: document.querySelector("input[name='turma']:checked")?.value
+    };
+
+    enviarMatricula(dadosMatricula);
+
+
+
     document.getElementById('matriculaForm').reset();
     etapaAtual = 1;
     document.querySelectorAll('.etapa').forEach((div,i)=>{
@@ -241,16 +301,5 @@ document.getElementById('matriculaForm').addEventListener('submit', (e)=>{
     dadosForm.turmasSelecionadas = [];
 });
 
-function mostrarAlerta(mensagem, tipo='error') {
-    const alerta = document.getElementById('modalAlert');
-    alerta.textContent = mensagem;
-    alerta.className = 'modal-alert'; // reset classes
-    if(tipo === 'success') alerta.classList.add('success');
-    alerta.style.display = 'block';
 
-    // Desaparece após 3 segundos
-    setTimeout(() => {
-        alerta.style.display = 'none';
-    }, 3000);
-}
 

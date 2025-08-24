@@ -1,24 +1,44 @@
-// /api/matricula.js
-import fetch from "node-fetch";
+export const config = {
+  runtime: "edge", // força rodar como Edge Function
+};
 
-export default async function handler(req, res) {
+export default async function handler(req) {
   if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
+    return new Response(
+      JSON.stringify({ error: "Método não permitido" }),
+      { status: 405, headers: { "Content-Type": "application/json" } }
+    );
   }
 
   try {
-    const scriptURL = "https://script.google.com/macros/s/AKfycbynkWWC0P41ye9TWVSGTdZ_RfldqeY1oiwdvYaKdT079SFwxR5luFBc7RpSNk53c41E3w/exec";
+    // pega os dados que vieram do site
+    const dados = await req.json();
+    console.log("📩 Dados recebidos no proxy:", dados);
 
-    const response = await fetch(scriptURL, {
+    // URL do seu Apps Script (deploy como Web App)
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbynkWWC0P41ye9TWVSGTdZ_RfldqeY1oiwdvYaKdT079SFwxR5luFBc7RpSNk53c41E3w/exec";
+
+    // envia pro Google Apps Script
+    const resposta = await fetch(scriptUrl, {
       method: "POST",
-      body: JSON.stringify(req.body),
-      headers: { "Content-Type": "application/json" }
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(dados),
     });
 
-    const text = await response.text(); // NÃO usar .json()
-    res.status(200).send(text); // envia o texto diretamente
+    // tenta interpretar resposta como texto (Apps Script geralmente não retorna JSON)
+    const texto = await resposta.text();
+    console.log("📤 Resposta do Apps Script:", texto);
+
+    return new Response(
+      JSON.stringify({ ok: true, resposta: texto }),
+      { status: 200, headers: { "Content-Type": "application/json" } }
+    );
+
   } catch (err) {
-    console.error(err);
-    res.status(500).send("Erro ao enviar matrícula para o Google Script");
+    console.error("❌ Erro no proxy:", err);
+    return new Response(
+      JSON.stringify({ error: "Erro interno", detalhes: err.message }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
+    );
   }
 }

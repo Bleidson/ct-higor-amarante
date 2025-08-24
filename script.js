@@ -262,22 +262,24 @@ document.getElementById('matriculaForm').addEventListener('submit', (e)=>{
 
 
 
-    function enviarMatricula(dados) {
-        fetch("/api/matricula", {
+    async function enviarMatricula(dados) {
+        console.log("Dados enviados:", dados);
+
+        try {
+            const resp = await fetch("/api/matricula", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(dados)
-        })
-        .then(res => res.text()) // ler como texto
-        .then(resp => {
-            alert("Matrícula enviada com sucesso! Aguarde contato.");
-            console.log(resp);
-        })
-        .catch(err => {
-            alert("Erro ao enviar matrícula. Tente novamente.");
-            console.error(err);
-        });
+            body: JSON.stringify(dados),
+            });
+
+            const json = await resp.json();
+            console.log("✅ Resposta do servidor:", json);
+
+        } catch (erro) {
+            console.error("❌ Erro no envio:", erro);
+        }
     }
+
     
 
     // Exemplo de uso no final do form
